@@ -14,7 +14,7 @@ public class UserEntity {
     @Column(name = "full_name")
     private String fullName;
 
-    @OneToOne(fetch =  FetchType.EAGER)
+    @OneToOne(fetch =  FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "billin_address_id")
     private BillingAddressEntity billingAddress;
 
