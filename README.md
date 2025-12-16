@@ -10,6 +10,7 @@ O projeto foi criado com foco em aprendizado prático, aplicando conceitos de ar
 - Hibernate
 - MySQL
 - Maven
+- Swagger / OpenAPI
 
 ## ⚙️ Funcionalidades
 - Cadastro de usuarios de e-commerce
@@ -28,6 +29,7 @@ O projeto foi criado com foco em aprendizado prático, aplicando conceitos de ar
 - Definição de restrições de unicidade com @UniqueConstraint
 - Uso de estratégias de Cascade
 - Otimização de carregamento de dados com Eager e Lazy Loading
+- Documentación de la API con Swagger
 
 ## 🚀 Execução do projeto
 ### ✅ Pré-requisitos
@@ -89,12 +91,11 @@ mvn spring-boot:run
 ###  O execute a classe principal:
 EcomerceApplication
 ```
-
+A API poderá ser acessada em [localhost:8080](http://localhost:8080).
+O Swagger em [localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
 ## API Endpoints
 
 Para fazer as requisições HTTP abaixo, foi utilizada a ferramenta [postman](https://www.postman.com/):
-
-A API poderá ser acessada em [localhost:8080](http://localhost:8080).
 
 - POST /users
 ```
