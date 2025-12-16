@@ -1,9 +1,6 @@
 package com.chl.ecomerce.controller;
 
-import com.chl.ecomerce.controller.dto.ApiResponse;
-import com.chl.ecomerce.controller.dto.CreateOrderDto;
-import com.chl.ecomerce.controller.dto.OrderSumaryDto;
-import com.chl.ecomerce.controller.dto.PaginationResponseDto;
+import com.chl.ecomerce.controller.dto.*;
 import com.chl.ecomerce.repository.OrderRepository;
 import com.chl.ecomerce.service.OrderService;
 import org.springframework.http.ResponseEntity;
@@ -39,6 +36,15 @@ public class OrderController {
                 resp.getContent(),
                 new PaginationResponseDto(resp.getNumber(), resp.getSize(), resp.getTotalElements(), resp.getTotalPages())
         ));
+    }
+    @GetMapping("/{orderId}")
+    public ResponseEntity<OrderResponseDto> findById(@PathVariable("orderId") Long orderId) {
+
+        var order = orderService.findById(orderId);
+
+        return order.isPresent() ?
+                ResponseEntity.ok(OrderResponseDto.fromEntity(order.get())) :
+                ResponseEntity.notFound().build();
     }
 }
 
